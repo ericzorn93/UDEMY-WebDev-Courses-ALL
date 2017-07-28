@@ -209,7 +209,7 @@ game();
 
 //Lecture Closures
 
-function retirement(retirementAge) {
+/*function retirement(retirementAge) {
     "use strict";
     var a = ' years left until retirement.';
     return function (yearOfBirth) {
@@ -246,7 +246,7 @@ function interviewQuestion(job) {
 }
 */
 
-function interviewQuestion(job) {
+/*function interviewQuestion(job) {
     "use strict";
     return function (name) {
         if (job === 'designer') {
@@ -259,16 +259,37 @@ function interviewQuestion(job) {
     }
 }
 
-interviewQuestion('teacher')('John');
+interviewQuestion('teacher')('John');*/
 
 
 
 
+//Lecture: bind, call and apply
 
 
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function (style, timeOfDay) {
+        if(style === 'formal') {
+            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! Whats Up? I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.' + ' Have a nice ' + timeOfDay);
+        }
+    }
+};
 
 
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
 
+john.presentation('formal', 'morning');
+
+john.presentation.call(emily, 'friendly', 'afternoon');
 
 
 
