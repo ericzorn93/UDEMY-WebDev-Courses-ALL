@@ -267,7 +267,7 @@ interviewQuestion('teacher')('John');*/
 //Lecture: bind, call and apply
 
 
-var john = {
+/*var john = {
     name: 'John',
     age: 26,
     job: 'teacher',
@@ -324,7 +324,37 @@ var ages = arrayCalc(years, calculateAge);
 
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages); //Ages Array
-console.log(fullJapan); //Age Testing for Japan
+console.log(fullJapan); //Age Testing for Japan */
+
+
+
+
+//Coding Challenge v4 Game
+
+
+function Question(question, answers, correct) {
+    "use strict";
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
+}
+
+var q1 = new Question('Is JavaScript the Coolest programming language in the world?', ['Yes', 'No'], 0);
+
+var q2 = new Question('What is the name of this course\'s teacher?', ['John', 'Michael', 'Jonas'], 2);
+
+var q3 = new Question('What does best describe coding?', ['Boring', 'Hard', 'Fun', 'Tedious'], 2);
+
+
+
+//Questions
+var questions = [q1, q2, q3];
+
+var n = Math.floor(Math.random() * questions.length);
+
+console.log(n);
+
+
 
 
 
