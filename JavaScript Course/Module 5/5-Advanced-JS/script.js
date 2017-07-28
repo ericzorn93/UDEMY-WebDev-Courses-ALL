@@ -291,6 +291,8 @@ john.presentation('formal', 'morning');
 
 john.presentation.call(emily, 'friendly', 'afternoon');
 
+// john.presentation.apply(emily, ['friendly', 'afternoon']);
+
 
 
 
