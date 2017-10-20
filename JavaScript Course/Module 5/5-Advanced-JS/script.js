@@ -494,7 +494,22 @@ console.log(fullJapan); //Age Testing for Japan */
 
 
 
+function zornIsBroke(money, broke) {
 
+	var zornMoney = ["none", "nothing", "nada", "broke", 0];
+
+	for (var i = 0; i < zornMoney.length; i += 1) {
+		console.log(zornMoney[i]);
+	}
+
+	if(money === 0) {
+		broke = true;
+		console.log("Zorn is Broke " +  " and it is " + broke);
+		console.log("This is a sad day!");
+	}
+}
+
+zornIsBroke(0, true);
 
 
 
