@@ -53,13 +53,19 @@ export default class Recipe {
             let objIng;
             if (unitIndex > -1) {
                 // There is a unit
-                const  arrCount = arring.slice(0, unitIndex); // Example 4 1/2 cups, arrCount is [4 1/2]
+                const  arrCount = arrIng.slice(0, unitIndex); // Example 4 1/2 cups, arrCount is [4 1/2]
                 let count;
 
                 if (arrCount.length === 1) {
-                    count = arrIng[0];
+                    count = eval(arrIng[0].replace('-', '+'));
                 } else {
                     count = eval(arrIng.slice(0, unitIndex).join('+'));
+                }
+
+                objIng = {
+                    count,
+                    unit: arrIng[unitIndex],
+                    ingredient: arrIng.slice(unitIndex + 1).join(' ')
                 }
 
             }  else if (parseInt(arrIng[0], 10)) {
