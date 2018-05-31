@@ -53,6 +53,15 @@ export default class Recipe {
             let objIng;
             if (unitIndex > -1) {
                 // There is a unit
+                const  arrCount = arring.slice(0, unitIndex); // Example 4 1/2 cups, arrCount is [4 1/2]
+                let count;
+
+                if (arrCount.length === 1) {
+                    count = arrIng[0];
+                } else {
+                    count = eval(arrIng.slice(0, unitIndex).join('+'));
+                }
+
             }  else if (parseInt(arrIng[0], 10)) {
                 // There is NO unit, but 1st element is number
                 objIng = {
@@ -70,7 +79,7 @@ export default class Recipe {
                 }
             }
 
-            return ingredient;
+            return objIng;
         });
 
         this.ingredients = newIngredients;
