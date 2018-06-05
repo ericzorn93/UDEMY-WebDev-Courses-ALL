@@ -16,7 +16,6 @@ import { elements, renderLoader, clearLoader } from './views/base';
  * - liked recipes
  */
 const state = {};
-window.state = state;
 
 
 /* Search Controller */
@@ -25,7 +24,7 @@ const controlSearch = async () => {
     // 1) Get query from view
     const query = searchView.getInput(); //TODO
     // const query = 'pizza'; //TODO
-    console.log(query);
+    // console.log(query);
 
     if (query) {
         // 2) New search object and add to state
@@ -70,7 +69,7 @@ elements.searchResPages.addEventListener('click', e => {
 const controlRecipe = async () => {
     // Get ID from url hash
     const id = window.location.hash.replace('#', '');
-    console.log(id);
+    // console.log(id);
 
     if (id) {
         // prepare UI for changes
@@ -222,5 +221,3 @@ elements.recipe.addEventListener('click', e => {
 
     console.log(state.recipe);
 });
-
-window.l = new List();
